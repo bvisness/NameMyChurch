@@ -14,6 +14,10 @@ const grammar = {
             repl: ['STANDALONE_VERB'],
             weight: 0.4,
         },
+        {
+            repl: ['The', 'NOUN'],
+            weight: 0.4,
+        }
     ],
     'CNAME': [
         ['Church'],
