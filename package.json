@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "build": "./node_modules/.bin/babel src -d build && node build.js"
+    "build": "./node_modules/.bin/babel src --out-dir build --delete-dir-on-start --copy-files && node build.js",
+    "watch": "./node_modules/.bin/babel --watch src --out-dir build --copy-files"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
