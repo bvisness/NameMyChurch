@@ -47,6 +47,12 @@ button {
     color: #4a4a4a;
     outline: none;
     margin-top: 1rem;
+
+    cursor: pointer;
+}
+
+button:hover {
+    color: black;
 }
 
 button hr {
@@ -55,11 +61,15 @@ button hr {
     margin: 4px 0;
 }
 
+button:hover hr {
+    border-bottom-color: #999;
+}
+
 @media screen and (max-width: 425px) {
     h1 {
         font-size: 1.4rem;
     }
-    
+
     #result {
         font-size: 2rem;
     }
