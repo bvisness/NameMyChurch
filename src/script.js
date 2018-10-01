@@ -6,18 +6,24 @@ const grammar = {
     'NAME': [
         {
             repl: ['SINGULAR_ADJECTIVE', 'CNAME'],
-            weight: 0.6,
+            weight: 0.4,
         },
-        ['VPHRASE', 'CNAME', 'ENDING_APHRASE'],
-        ['NPHRASE', 'CNAME', 'ENDING_APHRASE'],
+        {
+            repl: ['VPHRASE', 'CNAME', 'ENDING_APHRASE'],
+            weight: 1.2,
+        },
+        {
+            repl: ['NPHRASE', 'CNAME', 'ENDING_APHRASE'],
+            weight: 1.2,
+        },
         {
             repl: ['STANDALONE_VERB'],
-            weight: 0.4,
+            weight: 0.2,
         },
         {
             repl: ['The', 'NOUN'],
             weight: 0.4,
-        }
+        },
     ],
     'CNAME': [
         ['Church'],
@@ -93,6 +99,9 @@ const grammar = {
         ['view'],
         ['way'],
         ['wood'],
+        ['bridge'],
+        ['point'],
+        ['spring'],
     ],
 };
 
