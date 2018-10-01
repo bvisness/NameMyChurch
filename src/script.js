@@ -151,3 +151,9 @@ function generate() {
 
     document.querySelector('#result').innerHTML = result;
 }
+
+document.addEventListener('keydown', event => {
+    if (event.which === 32) {
+        generate();
+    }
+});
