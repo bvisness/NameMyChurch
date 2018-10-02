@@ -147,13 +147,42 @@ function generate() {
         }
     }
 
-    const result = string.join(' ').replace(/ %slurp% /g, '');
+    const result = string.join(' ').replace(/ %slurp% /g, '').trim();
 
     document.querySelector('#result').innerHTML = result;
 }
 
-document.addEventListener('keydown', event => {
-    if (event.which === 32) {
-        generate();
+function selectText(node) {
+    if (document.body.createTextRange) {
+        const range = document.body.createTextRange();
+        range.moveToElementText(node);
+        range.select();
+    } else if (window.getSelection) {
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(node);
+        selection.removeAllRanges();
+        selection.addRange(range);
     }
+}
+
+window.addEventListener('load', () => {
+    document.querySelector('#gen-button').addEventListener('click', event => {
+        event.preventDefault();
+        event.stopPropagation();
+        generate();
+    });
+
+    document.addEventListener('keydown', event => {
+        if (
+            event.which === 32
+            && document.activeElement !== document.querySelector('#gen-button')
+        ) {
+            generate();
+        }
+    });
+
+    document.querySelector('#result').addEventListener('click', function(event) {
+        selectText(this);
+    });
 });

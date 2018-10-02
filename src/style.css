@@ -8,7 +8,9 @@ body {
 }
 
 .fold {
-    height: 100vh;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 
     display: flex;
     flex-direction: column;
@@ -26,10 +28,11 @@ body {
     position: absolute;
     bottom: 0;
     padding: 0 5%;
+    line-height: 1.3em;
 }
 
 a {
-    color: initial;
+    color: inherit;
     text-decoration: none;
 }
 
@@ -38,6 +41,22 @@ h1 {
     margin: 0;
     padding-top: 40px;
     font-weight: 100;
+}
+
+h1::before, h1::after {
+    content: '';
+    display: inline-block;
+    width: 2.2rem;
+    border-bottom: 1px solid #666;
+    margin: 0.3em 1.9rem;
+}
+
+h1::before {
+    margin-left: 0;
+}
+
+h1::after {
+    margin-right: 0;
 }
 
 button {
@@ -65,12 +84,53 @@ button:hover hr {
     border-bottom-color: #999;
 }
 
-@media screen and (max-width: 425px) {
+.dummy {
+    height: 30px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0.6rem;
+    color: #999;
+}
+
+.footer.left {
+    text-align: left;
+    left: 0.6rem;
+}
+
+.footer.right {
+    text-align: right;
+    right: 0.6rem;
+    line-height: 0;
+    font-size: 1.4rem;
+}
+
+.joke {
+    display: none;
+}
+
+.footer:hover .joke {
+    display: inline;
+}
+
+@media screen and (max-width: 425px), screen and (max-height: 425px) {
     h1 {
         font-size: 1.4rem;
+        padding-top: 20px;
+    }
+
+    h1::before, h1::after {
+        width: 1.4rem;
+        margin-left: 0.7rem;
+        margin-right: 0.7rem;
     }
 
     #result {
         font-size: 2rem;
+    }
+
+    .dummy {
+        height: 0;
     }
 }

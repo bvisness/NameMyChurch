@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Name My Church - Church Name Generator</title>
+        <meta name="description" content="Find the perfect name for your new church. Generate hundreds of unique names from relevant to traditional and everything in between.">
+
         <script src="vocab.js"></script>
         <script src="script.js"></script>
 
         <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
         <link rel="stylesheet" href="normalize.css">
         <link rel="stylesheet" href="style.css">
     </head>
@@ -21,13 +25,26 @@
                 <div class="result-container">
                     <div id="result"></div>
                 </div>
-                <button onclick="generate();">
+                <button id="gen-button">
                     Another Name?
                     <hr>
                 </button>
             </div>
 
             <div class="dummy"></div>
+        </div>
+
+        <div class="footer left">
+            &copy; <span class="joke">A</span> 2018 <span class="joke">joke by</span> Ben Visness
+        </div>
+
+        <div class="footer right">
+            <a href="https://github.com/bvisness/NameMyChurch">
+                <i class="fab fa-github-square"></i>
+            </a>
+            <a href="https://twitter.com/its_bvisness">
+                <i class="fab fa-twitter-square"></i>
+            </a>
         </div>
 
         <script>generate();</script>
