@@ -152,20 +152,6 @@ function generate() {
     document.querySelector('#result').innerHTML = result;
 }
 
-function selectText(node) {
-    if (document.body.createTextRange) {
-        const range = document.body.createTextRange();
-        range.moveToElementText(node);
-        range.select();
-    } else if (window.getSelection) {
-        const selection = window.getSelection();
-        const range = document.createRange();
-        range.selectNodeContents(node);
-        selection.removeAllRanges();
-        selection.addRange(range);
-    }
-}
-
 window.addEventListener('load', () => {
     document.querySelector('#gen-button').addEventListener('click', event => {
         event.preventDefault();
@@ -180,9 +166,5 @@ window.addEventListener('load', () => {
         ) {
             generate();
         }
-    });
-
-    document.querySelector('#result').addEventListener('click', function(event) {
-        selectText(this);
     });
 });
