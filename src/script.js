@@ -150,6 +150,16 @@ function generate() {
     const result = string.join(' ').replace(/ %slurp% /g, '').trim();
 
     document.querySelector('#result').innerHTML = result;
+    return result;
+}
+
+function goUntil(word) {
+    for (let i = 0; i < 10000; i++) {
+        const result = generate();
+        if (result.toLowerCase().indexOf(word) !== -1) {
+            break;
+        }
+    }
 }
 
 window.addEventListener('load', () => {
